@@ -28,10 +28,9 @@
             line-height: 1.8;
             overflow-x: hidden;
         }
-        /* שינוי רקע ה-Header לגוון קרעם רך ומושלם כדי שהלוגו יבלוט מעל הכל */
         header {
-            background: #F4EFE6;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
             position: fixed;
             top: 0;
             left: 0;
@@ -41,22 +40,20 @@
             justify-content: space-between;
             align-items: center;
             padding: 12px 5%;
-            border-bottom: 1px solid rgba(74, 107, 108, 0.15);
         }
         .logo-container {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        /* הבלטה והגדלה מרבית של הלוגו */
+        /* הגדלה והבלטה משמעותית של הלוגו */
         .logo-img {
             height: 110px;
             width: 110px;
             object-fit: cover;
             border-radius: 50%;
             border: 4px solid var(--primary);
-            box-shadow: 0 6px 20px rgba(74, 107, 108, 0.3);
-            background-color: var(--white);
+            box-shadow: 0 6px 20px rgba(74, 107, 108, 0.25);
         }
         .logo-text {
             font-size: 1.6rem;
@@ -263,7 +260,7 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .section { padding: 50px 5%; }
-            .logo-img { height: 85px; width: 85px; }
+            .logo-img { height: 80px; width: 80px; }
         }
     </style>
 </head>
@@ -271,7 +268,8 @@
 
     <header>
         <div class="logo-container">
-            <img src="logo.jpg.jpeg" alt="לוגו בר שירה דהן" class="logo-img">
+            <!-- מעודכן לשם הקובץ החדש logo.jpg -->
+            <img src="logo.jpg" alt="לוגו בר שירה דהן" class="logo-img">
             <div class="logo-text">בר שירה דהן</div>
         </div>
         <a href="https://wa.me/972523916024" class="cta-header" target="_blank"><i class="fab fa-whatsapp"></i> צור קשר</a>
