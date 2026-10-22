@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>בר שירה דהן - מאמנת רגשית למתבגרות</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4A6B6C;
+            --secondary: #D4A373;
+            --accent: #E9EDC9;
+            --light: #F9F6F0;
+            --dark: #2B2D42;
+            --text-color: #333333;
+            --white: #FFFFFF;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Heebo', sans-serif;
+        }
+        body {
+            background-color: var(--light);
+            color: var(--text-color);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .cta-header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        .cta-header:hover {
+            background-color: #385253;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(74,107,108,0.08) 0%, rgba(212,163,115,0.12) 100%);
+            padding: 160px 5% 100px 5%;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 800;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--dark);
+            max-width: 750px;
+            margin: 0 auto 30px auto;
+            font-weight: 400;
+        }
+        .btn-main {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 14px 35px;
+            border-radius: 35px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(212,163,115,0.4);
+            transition: transform 0.2s, background 0.2s;
+        }
+        .btn-main:hover {
+            transform: translateY(-2px);
+            background-color: #c49162;
+        }
+
+        .section {
+            padding: 80px 10%;
+        }
+        .section.alt {
+            background-color: var(--white);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+        }
+        .pain-points p, .about-text p, .solution p {
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        
+        .highlight-box {
+            background: rgba(233,237,201,0.4);
+            border-right: 5px solid var(--primary);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        .highlight-box p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .bio-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .bio-content {
+            flex: 1;
+            min-width: 280px;
+        }
+        .bio-image {
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+        }
+        .bio-image .placeholder-img {
+            width: 100%;
+            max-width: 350px;
+            height: 400px;
+            background: #ddd;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 1.1rem;
+            margin: 0 auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #385253 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 5%;
+        }
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 5%;
+            font-size: 0.95rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .section { padding: 50px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">בר שירה דהן</div>
+        <a href="https://wa.me/972500000000" class="cta-header" target="_blank"><i class="fab fa-whatsapp"></i> צור קשר</a>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>את רואה את הבת שלך סובלת, ואת לא מפסיקה לשאול את עצמך מה את יכולה לעשות אחרת?</h1>
+            <p>את רואה את הבת שלך מתמודדת עם קושי שמשפיע על החיים שלה, ואת לא תמיד יודעת איך לעזור לה.</p>
+            <a href="https://wa.me/972500000000" class="btn-main" target="_blank">לשיחת התייעצות אישית</a>
+        </div>
+    </section>
+
+    <section class="section alt">
+        <div class="container">
+            <p>לפעמים זו חרדה, לפעמים קושי חברתי, התנהגות שמדאיגה אותך, התמכרות או מצוקה שהיא אפילו לא מצליחה לבטא במילים.</p>
+            <p>את מנסה לעזור, מחפשת תשובות, ולפעמים גם שואלת את עצמך אם יכולת לעשות משהו אחרת.</p>
+            <p><strong>את רק רוצה להבין מה עובר עליה, להגיע אליה באמת, ולעזור לה לצאת מהמקום שבו היא נמצאת.</strong></p>
+            
+            <div class="highlight-box">
+                <p>ואת מנסה לעזור. מדברת איתה, מעודדת, מחפשת פתרונות. לפעמים את חסרת אונים, לפעמים מתוסכלת, ובעיקר חושבת "מה אני עושה לא בסדר".</p>
+            </div>
+            
+            <p>את רק רוצה לראות אותה בטוב. בטוחה בעצמה, חופשייה, שמחה. ואת רוצה לדעת שאת עושה כל מה שאפשר כדי לעזור לה.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>אבל מה אם הדרך לעזור לה היא לא לנסות להעלים את החרדה, אלא להבין מה עומד מאחוריה?</h2>
+            <p>בעבודה איתי בקליניקה אנחנו מקשיבות למה שדפוס המצוקה הזה מספר לנו, ומנסות להגיע אל המקור הפנימי של המצוקה. אל המקומות הפצועים שעדיין מבקשים מענה וריפוי.</p>
+            <p>ואז כשהבת שלך מקבלת הזדמנות להבין מה קורה בתוכה ולרפא את מה שעומד בשורש הקושי, נפתחת אפשרות לשינוי עמוק יותר. לא רק בהתמודדות עם החרדה, ולא רק בהתנהגות, אלא גם בתחושה שלה כלפי עצמה וביכולת שלה לחיות את החיים שהיא רוצה, בדימוי העצמי ותחושת המסוגלות שלה.</p>
+        </div>
+    </section>
+
+    <section class="section alt">
+        <div class="container bio-section">
+            <div class="bio-content">
+                <h2>נעים להכיר, אני בר שירה דהן</h2>
+                <p><strong>מאמנת רגשית בשיטת המגדלור, אשת חינוך ומדריכת כלות.</strong></p>
+                <p>לאורך השנים פגשתי ועבדתי עם מאות נערות, ושוב ושוב נוצר בינינו חיבור אחר. עמוק, משמעותי, כזה שנשאר עם שתינו גם הרבה אחרי שהמפגש הסתיים.</p>
+                <p>גיליתי שוב ושוב עד כמה עמוק החיבור שנוצר כשנערה מרגישה שמישהו רואה אותה. לא רק את ההתנהגות שלה, את התגובות או את מה שהסביבה מתקשה להבין - אלא את הלב שלה. את מה שכואב, את מה שמפחיד, את מה שהיא לא תמיד יודעת להסביר בעצמה. בלי שיפוטיות.</p>
+            </div>
+            <div class="bio-image">
+                <div class="placeholder-img">
+                    <span>תמונה של בר שירה דהן</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <p>בעצם מאחורי מה שנראה כמו חוצפה, אדישות או חוסר אחריות, מסתתר עולם שלם שמבקש שיבינו אותו.</p>
+            <p>מתוך השליחות שאני חשה בכל הגוף שלי, בחרתי ללוות נערות בתהליכים רגשיים עמוקים ומרפאים.</p>
+            <p>בקליניקה שלי, נערה לא צריכה להוכיח שהיא בסדר או להצדיק את עצמה. יש לה מקום לעצור, להקשיב לעצמה, להבין מה באמת עובר עליה ולגלות מה עומד מאחורי הדפוסים שמנהלים אותה.</p>
+            <p>אני רוצה שכל נערה שמגיעה אליי תרגיש שהיא לא צריכה להסביר את עצמה בלי סוף, ולא צריכה להוכיח שהיא לא מה שחושבים עליה.</p>
+            <p><strong>שיש מישהי שרוצה באמת להבין אותה. לראות את הלב שלה, גם כשהיא בעצמה כבר קצת איבדה קשר איתו.</strong></p>
+            
+            <div class="highlight-box" style="text-align: center; margin-top: 50px;">
+                <p>ומתוך החיבור הזה, יחד עם הידע המקצועי והעבודה הרגשית, אפשר להתחיל להגיע לשורש הקושי, לאפשר ריפוי פנימי ולגלות מחדש את מי שהיא.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>מוכנה לעשות את הצעד הראשון עבור הבת שלך?</h2>
+            <p>דברי איתי ונתחיל מסע של הקשבה, חיבור וריפוי.</p>
+            <a href="https://wa.me/972500000000" class="btn-main" target="_blank" style="background-color: var(--white); color: var(--primary);">לשיחת וואטסאפ אישית איתי</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>כל הזכויות שמורות © בר שירה דהן | מאמנת רגשית למתבגרות</p>
+    </footer>
+
+    <a href="https://wa.me/972500000000" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
