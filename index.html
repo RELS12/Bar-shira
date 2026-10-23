@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #6b4c58; /* סגול-ורוד עתיק ועמוק */
-            --secondary: #c5a059; /* זהב עדין וחמים */
-            --accent: #fcf4f6; /* ורוד פסטלי בהיר ורך */
-            --light: #fffcfd; /* רקע כללי נקי וחמים */
+            --primary: #8a4f61; /* ורוד עתיק ועמוק, אלגנטי וחמים */
+            --secondary: #d4af37; /* זהב אמיתי ובולט */
+            --accent: #faedf2; /* ורוד פסטלי בהיר ורך */
+            --light: #fff8fa; /* רקע כללי נקי וחמים */
             --dark: #2b2d42;
             --text-color: #333333;
             --white: #FFFFFF;
@@ -30,8 +30,8 @@
         }
         /* Header עם רקע ורוד-פסטלי רך ויוקרתי */
         header {
-            background: #faedf1;
-            box-shadow: 0 4px 20px rgba(107, 76, 88, 0.12);
+            background: #faedf2;
+            box-shadow: 0 4px 20px rgba(138, 79, 97, 0.12);
             position: fixed;
             top: 0;
             left: 0;
@@ -41,21 +41,21 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
-            border-bottom: 2px solid #f0d8df;
+            border-bottom: 2px solid #f2d3de;
         }
         .logo-container {
             display: flex;
             align-items: center;
             gap: 18px;
         }
-        /* הבלטה מקסימלית של הלוגו: גודל בולט, מסגרת זהובה עבה וצללית מרשימה */
+        /* הבלטה מקסימלית של הלוגו */
         .logo-img {
             height: 125px;
             width: 125px;
             object-fit: cover;
             border-radius: 50%;
             border: 5px solid var(--secondary);
-            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.4), 0 4px 10px rgba(107, 76, 88, 0.15);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4), 0 4px 10px rgba(138, 79, 97, 0.15);
             background-color: var(--white);
             transition: transform 0.3s ease;
         }
@@ -66,7 +66,6 @@
             font-size: 1.7rem;
             font-weight: 800;
             color: var(--primary);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
         .cta-header {
             background-color: var(--primary);
@@ -76,14 +75,14 @@
             text-decoration: none;
             font-weight: 500;
             transition: background 0.3s;
-            box-shadow: 0 4px 12px rgba(107, 76, 88, 0.2);
+            box-shadow: 0 4px 12px rgba(138, 79, 97, 0.2);
         }
         .cta-header:hover {
-            background-color: #553b46;
+            background-color: #723f4f;
         }
         
         .hero {
-            background: linear-gradient(135deg, rgba(250, 237, 241, 0.8) 0%, rgba(197, 160, 89, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(250, 237, 242, 0.9) 0%, rgba(212, 175, 55, 0.12) 100%);
             padding: 200px 5% 100px 5%;
             text-align: center;
         }
@@ -105,14 +104,14 @@
         }
         .btn-main {
             display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, #553b46 100%);
+            background: linear-gradient(135deg, var(--secondary) 0%, #b89728 100%);
             color: var(--white);
             padding: 14px 35px;
             border-radius: 35px;
             font-size: 1.1rem;
             font-weight: 700;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(107, 76, 88, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
             transition: transform 0.2s, opacity 0.2s;
         }
         .btn-main:hover {
@@ -149,7 +148,7 @@
             padding: 30px;
             border-radius: 8px;
             margin: 40px 0;
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.08);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
         }
         .highlight-box p {
             font-size: 1.2rem;
@@ -177,7 +176,7 @@
             width: 100%;
             max-width: 350px;
             height: 400px;
-            background: #f3e4e9;
+            background: #f2d3de;
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -193,7 +192,7 @@
             background: var(--white);
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(107, 76, 88, 0.1);
+            box-shadow: 0 10px 30px rgba(138, 79, 97, 0.1);
             margin-top: 50px;
             text-align: center;
             border-top: 4px solid var(--secondary);
@@ -218,12 +217,13 @@
             padding: 10px 25px;
             border-radius: 50px;
             margin-top: 10px;
-            border: 1px solid #f0d8df;
+            border: 1px solid #f2d3de;
             box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
         }
 
+        /* אזור תחתון עם כפתור זהב בולט וברור לעין */
         .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, #432e37 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #5c3441 100%);
             color: var(--white);
             text-align: center;
             padding: 80px 5%;
@@ -235,7 +235,12 @@
         .cta-section p {
             font-size: 1.2rem;
             margin-bottom: 30px;
-            opacity: 0.9;
+            opacity: 0.95;
+        }
+        .cta-section .btn-main {
+            background: linear-gradient(135deg, var(--secondary) 0%, #b89728 100%);
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
         }
 
         footer {
@@ -360,7 +365,8 @@
         <div class="container">
             <h2>מוכנה לעשות את הצעד הראשון עבור הבת שלך?</h2>
             <p>דברי איתי ונתחיל מסע של הקשבה, חיבור וריפוי.</p>
-            <a href="https://wa.me/972523916024" class="btn-main" target="_blank" style="background-color: var(--white); color: var(--primary);"><i class="fab fa-whatsapp"></i> לשיחת וואטסאפ אישית איתי</a>
+            <!-- כפתור זהב בולט ונוצץ שרואים ברור על הרקע הכהה -->
+            <a href="https://wa.me/972523916024" class="btn-main" target="_blank"><i class="fab fa-whatsapp"></i> לשיחת וואטסאפ אישית איתי</a>
         </div>
     </section>
 
