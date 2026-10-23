@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #6b4c58; /* סגול-ורוד עתיק ועמוק למראה יוקרתי ומרגיע */
+            --primary: #6b4c58; /* סגול-ורוד עתיק ועמוק */
             --secondary: #c5a059; /* זהב עדין וחמים */
             --accent: #fcf4f6; /* ורוד פסטלי בהיר ורך */
             --light: #fffcfd; /* רקע כללי נקי וחמים */
@@ -28,10 +28,10 @@
             line-height: 1.8;
             overflow-x: hidden;
         }
-        /* Header עם רקע ורוד-פסטלי רך מאוד ויוקרתי */
+        /* Header עם רקע ורוד-פסטלי רך ויוקרתי */
         header {
             background: #faedf1;
-            box-shadow: 0 2px 15px rgba(107, 76, 88, 0.08);
+            box-shadow: 0 4px 20px rgba(107, 76, 88, 0.12);
             position: fixed;
             top: 0;
             left: 0;
@@ -40,28 +40,33 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 5%;
-            border-bottom: 1px solid #f0d8df;
+            padding: 15px 5%;
+            border-bottom: 2px solid #f0d8df;
         }
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 18px;
         }
-        /* הבלטה והגדלה של הלוגו עם מסגרת זהובה עדינה */
+        /* הבלטה מקסימלית של הלוגו: גודל בולט, מסגרת זהובה עבה וצללית מרשימה */
         .logo-img {
-            height: 110px;
-            width: 110px;
+            height: 125px;
+            width: 125px;
             object-fit: cover;
             border-radius: 50%;
-            border: 3px solid var(--secondary);
-            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.25);
+            border: 5px solid var(--secondary);
+            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.4), 0 4px 10px rgba(107, 76, 88, 0.15);
             background-color: var(--white);
+            transition: transform 0.3s ease;
+        }
+        .logo-img:hover {
+            transform: scale(1.05);
         }
         .logo-text {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             font-weight: 800;
             color: var(--primary);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
         .cta-header {
             background-color: var(--primary);
@@ -79,7 +84,7 @@
         
         .hero {
             background: linear-gradient(135deg, rgba(250, 237, 241, 0.8) 0%, rgba(197, 160, 89, 0.1) 100%);
-            padding: 180px 5% 100px 5%;
+            padding: 200px 5% 100px 5%;
             text-align: center;
         }
         .hero h1 {
@@ -140,10 +145,11 @@
         
         .highlight-box {
             background: var(--accent);
-            border-right: 5px solid var(--primary);
+            border-right: 5px solid var(--secondary);
             padding: 30px;
             border-radius: 8px;
             margin: 40px 0;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.08);
         }
         .highlight-box p {
             font-size: 1.2rem;
@@ -190,7 +196,7 @@
             box-shadow: 0 10px 30px rgba(107, 76, 88, 0.1);
             margin-top: 50px;
             text-align: center;
-            border-top: 4px solid var(--primary);
+            border-top: 4px solid var(--secondary);
         }
         .contact-box h3 {
             font-size: 1.8rem;
@@ -265,7 +271,7 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .section { padding: 50px 5%; }
-            .logo-img { height: 85px; width: 85px; }
+            .logo-img { height: 95px; width: 95px; }
         }
     </style>
 </head>
@@ -273,7 +279,6 @@
 
     <header>
         <div class="logo-container">
-            <!-- קריאה נכונה ומדויקת לקובץ logo.jpg -->
             <img src="logo.jpg" alt="לוגו בר שירה דהן" class="logo-img">
             <div class="logo-text">בר שירה דהן</div>
         </div>
