@@ -28,6 +28,22 @@
             line-height: 1.8;
             overflow-x: hidden;
         }
+
+        /* אנימציית כניסה רכה לכל אזור באתר */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .section, .hero .container {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
         header {
             background: #faedf2;
             box-shadow: 0 4px 20px rgba(138, 79, 97, 0.12);
@@ -168,6 +184,10 @@
             box-shadow: 0 8px 20px rgba(138, 79, 97, 0.08);
             border-top: 4px solid var(--secondary);
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
         }
         .card i {
             font-size: 2.5rem;
@@ -201,7 +221,6 @@
             text-align: center;
         }
         
-        /* הוספת פילטר חדות וקונטרסט כדי שהטקסט והפרטים בתמונה יבלוטו בצורה מקסימלית */
         .bio-image img {
             width: 100%;
             max-width: 380px;
@@ -299,6 +318,22 @@
             font-size: 0.95rem;
         }
 
+        /* אנימציית פעימה (Pulse) לכפתור הוואטסאפ הצף */
+        @keyframes pulseWhatsApp {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            }
+        }
+
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -312,12 +347,12 @@
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             z-index: 100;
+            animation: pulseWhatsApp 2s infinite ease-in-out;
             transition: transform 0.3s;
         }
         .whatsapp-float:hover {
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
 
         @media (max-width: 768px) {
@@ -460,6 +495,7 @@
         <p>כל הזכויות שמורות © בר שירה דהן | מאמנת רגשית למתבגרות</p>
     </footer>
 
+    <!-- כפתור וואטסאפ צף עם אפקט פעימה מיוחד -->
     <a href="https://wa.me/972523916024" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
