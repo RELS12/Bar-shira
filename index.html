@@ -28,7 +28,6 @@
             line-height: 1.8;
             overflow-x: hidden;
         }
-        /* Header מתוקן מימין לשמאל לפי תקן עברית */
         header {
             background: #faedf2;
             box-shadow: 0 4px 20px rgba(138, 79, 97, 0.12);
@@ -156,7 +155,6 @@
             margin: 0;
         }
 
-        /* קוביות תחומי הליווי */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -203,7 +201,7 @@
             text-align: center;
         }
         
-        /* תיקון תצוגת התמונה כך שיראו את כולה במלואה בלי חיתוך */
+        /* תצוגה מלאה ומושלמת לתמונה האישית shira.jpg */
         .bio-image img {
             width: 100%;
             max-width: 380px;
@@ -216,7 +214,6 @@
             margin: 0 auto;
         }
 
-        /* שאלות נפוצות */
         .faq-container {
             margin-top: 40px;
         }
@@ -239,7 +236,6 @@
             margin: 0;
         }
 
-        /* אזור יצירת קשר */
         .contact-box {
             background: var(--white);
             padding: 40px;
@@ -273,7 +269,6 @@
             box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
         }
 
-        /* אזור תחתון עם כפתור זהב בולט וברור לעין */
         .cta-section {
             background: linear-gradient(135deg, var(--primary) 0%, #5c3441 100%);
             color: var(--white);
@@ -303,7 +298,6 @@
             font-size: 0.95rem;
         }
 
-        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -336,6 +330,7 @@
 
     <header>
         <div class="logo-container">
+            <!-- הלוגו נשאר בצד ימין -->
             <img src="logo.jpg" alt="לוגו בר שירה דהן" class="logo-img">
             <div class="logo-text">בר שירה דהן</div>
         </div>
@@ -364,7 +359,6 @@
         </div>
     </section>
 
-    <!-- תחומי הליווי המרכזיים -->
     <section class="section">
         <div class="container">
             <h2>במה אנחנו מתרכזות בתהליך?</h2>
@@ -404,14 +398,13 @@
                 <p>לאורך השנים פגשתי ועבדתי עם מאות נערות, ושוב ושוב נוצר בינינו חיבור אחר. עמוק, משמעותי, כזה שנשאר עם שתינו גם הרבה אחרי שהמפגש הסתיים.</p>
                 <p>גיליתי שוב ושוב עד כמה עמוק החיבור שנוצר כשנערה מרגישה שמישהו רואה אותה. לא רק את ההתנהגות שלה, את התגובות או את מה שהסביבה מתקשה להבין - אלא את הלב שלה. את מה שכואב, את מה שמפחיד, את מה שהיא לא תמיד יודעת להסביר בעצמה. בלי שיפוטיות.</p>
             </div>
-            <!-- כאן התמונה תוצג במלואה ובצורה מושלמת -->
+            <!-- כאן מופיעה התמונה האישית שלך שנקראת shira.jpg -->
             <div class="bio-image">
-                <img src="logo.jpg" alt="בר שירה דהן">
+                <img src="shira.jpg" alt="בר שירה דהן">
             </div>
         </div>
     </section>
 
-    <!-- שאלות נפוצות (FAQ) -->
     <section class="section alt">
         <div class="container">
             <h2>שאלות נפוצות של הורים</h2>
@@ -444,7 +437,6 @@
                 <p>ומתוך החיבור הזה, יחד עם הידע המקצועי והעבודה הרגשית, אפשר להתחיל להגיע לשורש הקושי, לאפשר ריפוי פנימי ולגלות מחדש את מי שהיא.</p>
             </div>
 
-            <!-- אזור יצירת קשר -->
             <div class="contact-box">
                 <h3>דברי איתי</h3>
                 <p>לשיחה ישירה, התייעצות או קביעת פגישה, אפשר ליצור קשר בוואטסאפ או בטלפון:</p>
@@ -469,7 +461,6 @@
         <p>כל הזכויות שמורות © בר שירה דהן | מאמנת רגשית למתבגרות</p>
     </footer>
 
-    <!-- כפתור וואטסאפ צף -->
     <a href="https://wa.me/972523916024" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
