@@ -61,21 +61,21 @@
             align-items: center;
             gap: 20px;
         }
-        /* שימוש بلוגו הרשמי logo.jpg בתפריט העליון */
+        /* לוגו עגול, גדול ובולט בתפריט העליון */
         .header-logo-img {
-            height: 90px; 
-            width: auto;
-            max-width: 160px;
-            object-fit: contain;
-            border-radius: 12px;
-            border: 2px solid var(--secondary);
+            height: 120px; 
+            width: 120px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            border: 4px solid var(--secondary);
             background-color: var(--white);
-            padding: 4px;
-            box-shadow: 0 4px 15px rgba(184, 151, 40, 0.3);
-            transition: transform 0.3s ease;
+            box-shadow: 0 6px 20px rgba(184, 151, 40, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .header-logo-img:hover {
-            transform: scale(1.05);
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 10px 30px rgba(184, 151, 40, 0.7);
         }
         .header-logo-text {
             font-size: 2.2rem; 
@@ -583,14 +583,14 @@
             .hero h1 { font-size: 1.55rem; line-height: 1.4; }
             .section { padding: 50px 5%; }
             .hero-face-img { height: 160px; width: 160px; border-width: 5px; }
-            .header-logo-img { height: 70px; }
+            .header-logo-img { height: 90px; width: 90px; }
             .header-logo-text { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header דינמי עם לוגו רשמי logo.jpg -->
+    <!-- Header דינמי עם לוגו עגול, גדול ובולט logo.jpg -->
     <header id="mainHeader">
         <div class="header-logo-container">
             <img src="logo.jpg" alt="לוגו בר שירה דהן" class="header-logo-img">
