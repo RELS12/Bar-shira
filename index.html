@@ -35,13 +35,13 @@
             overflow-x: hidden;
         }
 
-        /* Header דינמי: בהתחלה שקוף ונחבא, ומופיע בעדינות בגלילה */
+        /* Header דינמי: מופיע בגלילה עם לוגו מוגדל וברור */
         header {
-            background: rgba(250, 237, 242, 0.95);
+            background: rgba(250, 237, 242, 0.98);
             backdrop-filter: blur(8px);
             box-shadow: 0 4px 20px rgba(110, 62, 77, 0.15);
             position: fixed;
-            top: -100px; /* מתחיל מוסתר למעלה */
+            top: -120px; /* מתחיל מוסתר למעלה */
             left: 0;
             width: 100%;
             z-index: 1000;
@@ -50,27 +50,28 @@
             align-items: center;
             padding: 12px 5%;
             border-bottom: 2px solid #e8c5d1;
-            transition: top 0.4s ease-in-out; /* אנימציית הופעה חלקה */
+            transition: top 0.4s ease-in-out;
         }
         header.visible {
-            top: 0; /* יורד למקום כשגוללים */
+            top: 0;
         }
 
         .header-logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
         .header-logo-img {
-            height: 45px;
-            width: 45px;
+            height: 85px; /* הגדלנו משמעותית את הלוגו */
+            width: 85px;
             object-fit: cover;
             border-radius: 50%;
-            border: 2px solid var(--secondary);
+            border: 3px solid var(--secondary);
             background-color: var(--white);
+            box-shadow: 0 4px 15px rgba(184, 151, 40, 0.3);
         }
         .header-logo-text {
-            font-size: 1.2rem;
+            font-size: 1.6rem; /* הגדלנו גם את הטקסט שיהיה בולט ויפה */
             font-weight: 800;
             color: var(--primary);
         }
@@ -78,11 +79,11 @@
         .cta-header {
             background-color: var(--primary);
             color: var(--white);
-            padding: 8px 20px;
+            padding: 10px 22px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
             transition: background 0.3s;
             box-shadow: 0 4px 12px rgba(110, 62, 77, 0.2);
         }
@@ -511,12 +512,14 @@
             .hero h1 { font-size: 1.85rem; }
             .section { padding: 50px 5%; }
             .hero-face-img { height: 110px; width: 110px; border-width: 3.5px; }
+            .header-logo-img { height: 60px; width: 60px; }
+            .header-logo-text { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header שמופיע רק בזמן גלילה -->
+    <!-- Header שמופיע בזמן גלילה עם לוגו מוגדל ומרשים -->
     <header id="mainHeader">
         <div class="header-logo-container">
             <img src="logo.jpg" alt="לוגו בר שירה דהן" class="header-logo-img">
@@ -702,7 +705,7 @@
     </div>
 
     <script>
-        // פונקציה להצגת הלוגו העליון רק כאשר גוללים למטה
+        // פונקציה להצגת הלוגו המוגדל רק כאשר גוללים למטה
         window.addEventListener('scroll', function() {
             const header = document.getElementById('mainHeader');
             if (window.scrollY > 150) {
