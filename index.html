@@ -60,41 +60,52 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
+            padding: 12px 3%;
             border-bottom: 2px solid #e8c5d1;
+            gap: 10px;
         }
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 12px;
+            flex: 1;
+            min-width: 0;
         }
         .logo-img {
-            height: 125px;
-            width: 125px;
+            height: 95px;
+            width: 95px;
             object-fit: cover;
             border-radius: 50%;
-            border: 5px solid var(--secondary);
-            box-shadow: 0 8px 25px rgba(184, 151, 40, 0.4), 0 4px 10px rgba(110, 62, 77, 0.15);
+            border: 4px solid var(--secondary);
+            box-shadow: 0 6px 20px rgba(184, 151, 40, 0.4), 0 3px 8px rgba(110, 62, 77, 0.15);
             background-color: var(--white);
+            flex-shrink: 0;
             transition: transform 0.3s ease;
         }
         .logo-img:hover {
             transform: scale(1.05);
         }
         .logo-text {
-            font-size: 1.7rem;
+            font-size: 1.35rem;
             font-weight: 800;
             color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.2;
         }
         .cta-header {
             background-color: var(--primary);
             color: var(--white);
-            padding: 10px 25px;
-            border-radius: 30px;
+            padding: 8px 16px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.95rem;
             transition: background 0.3s;
             box-shadow: 0 4px 12px rgba(110, 62, 77, 0.2);
+            white-space: nowrap;
+            flex-shrink: 0;
         }
         .cta-header:hover {
             background-color: #552f3b;
@@ -102,11 +113,11 @@
         
         .hero {
             background: linear-gradient(135deg, rgba(250, 237, 242, 0.95) 0%, rgba(184, 151, 40, 0.15) 100%);
-            padding: 200px 5% 80px 5%;
+            padding: 160px 5% 80px 5%;
             text-align: center;
         }
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: var(--primary);
             margin-bottom: 20px;
             font-weight: 800;
@@ -115,10 +126,10 @@
             margin-right: auto;
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--dark);
             max-width: 750px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 20px auto;
             font-weight: 500;
         }
         .btn-main {
@@ -500,9 +511,11 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { font-size: 1.85rem; }
             .section { padding: 50px 5%; }
-            .logo-img { height: 95px; width: 95px; }
+            .logo-img { height: 75px; width: 75px; border-width: 3px; }
+            .logo-text { font-size: 1.1rem; }
+            header { padding: 10px 3px; }
         }
     </style>
 </head>
@@ -530,10 +543,6 @@
                 </div>
                 
                 <p>את רק רוצה לראות אותה בטוב. בטוחה בעצמה, חופשייה, שמחה. ואת רוצה לדעת שאת עושה כל מה שאפשר כדי לעזור לה.</p>
-
-                <div style="margin-top: 40px;">
-                    <a href="https://wa.me/972523916024" class="btn-main" target="_blank" aria-label="לשיחת התייעצות אישית">לשיחת התייעצות אישית</a>
-                </div>
             </div>
         </section>
 
@@ -701,62 +710,3 @@
 
         function increaseText() {
             if (currentZoomLevel < 3) {
-                currentZoomLevel++;
-                applyZoom();
-            }
-        }
-
-        function decreaseText() {
-            if (currentZoomLevel > 0) {
-                currentZoomLevel--;
-                applyZoom();
-            }
-        }
-
-        function applyZoom() {
-            document.body.classList.remove('zoom-1', 'zoom-2', 'zoom-3');
-            if (currentZoomLevel > 0) {
-                document.body.classList.add('zoom-' + currentZoomLevel);
-            }
-        }
-
-        function toggleContrastAA() {
-            document.body.classList.toggle('contrast-aa');
-        }
-
-        function toggleGrayscale() {
-            document.body.classList.toggle('grayscale');
-        }
-
-        function resetAccessibility() {
-            currentZoomLevel = 0;
-            document.body.classList.remove('zoom-1', 'zoom-2', 'zoom-3', 'contrast-aa', 'grayscale');
-        }
-
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.style.display = 'none';
-            }
-        }
-    </script>
-
-    <style>
-        body.zoom-1 p, body.zoom-1 span, body.zoom-1 a, body.zoom-1 li { font-size: 1.25rem !important; }
-        body.zoom-2 p, body.zoom-2 span, body.zoom-2 a, body.zoom-2 li { font-size: 1.4rem !important; }
-        body.zoom-3 p, body.zoom-3 span, body.zoom-3 a, body.zoom-3 li { font-size: 1.6rem !important; }
-
-        body.zoom-1 h2 { font-size: 2.3rem !important; }
-        body.zoom-2 h2 { font-size: 2.6rem !important; }
-        body.zoom-3 h2 { font-size: 3rem !important; }
-    </style>
-
-</body>
-</html>
