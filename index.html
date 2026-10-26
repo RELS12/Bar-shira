@@ -69,6 +69,11 @@
             border: 5px solid var(--secondary);
             background-color: var(--white);
             box-shadow: 0 6px 20px rgba(184, 151, 40, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .header-logo-img:hover {
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 10px 30px rgba(184, 151, 40, 0.7);
         }
         .header-logo-text {
             font-size: 2.2rem; 
@@ -91,29 +96,34 @@
             background-color: #552f3b;
         }
         
-        /* Hero Section עם תמונת bar.jpg בלי כתיב */
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, rgba(250, 237, 242, 0.95) 0%, rgba(184, 151, 40, 0.15) 100%);
-            padding: 80px 5% 80px 5%;
+            padding: 80px 5% 90px 5%;
             text-align: center;
+            position: relative;
         }
         .hero-face-container {
             margin-bottom: 30px;
         }
+        
+        /* אפקט ריחוף זוהר ויוקרתי (פיצ'ר 4) לתמונות */
         .hero-face-img {
-            height: 200px; 
-            width: 200px;
+            height: 220px; 
+            width: 220px;
             object-fit: cover;
             object-position: center top;
             border-radius: 50%;
             border: 6px solid var(--secondary);
             box-shadow: 0 12px 35px rgba(184, 151, 40, 0.5), 0 6px 20px rgba(110, 62, 77, 0.25);
             background-color: var(--white);
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
         .hero-face-img:hover {
-            transform: scale(1.05);
+            transform: scale(1.08) rotate(-2deg);
+            box-shadow: 0 20px 45px rgba(184, 151, 40, 0.75), 0 10px 25px rgba(110, 62, 77, 0.35);
         }
+
         .hero h1 {
             font-size: 2.4rem;
             color: var(--primary);
@@ -150,7 +160,8 @@
         }
 
         .section {
-            padding: 80px 10%;
+            padding: 90px 10%;
+            position: relative;
         }
         .section.alt {
             background-color: var(--white);
@@ -200,10 +211,11 @@
             box-shadow: 0 8px 20px rgba(110, 62, 77, 0.08);
             border-top: 4px solid var(--secondary);
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(110, 62, 77, 0.15);
         }
         .card i {
             font-size: 2.5rem;
@@ -237,7 +249,7 @@
             text-align: center;
         }
         
-        /* תמונת shira.jpg עם הכתיב והפרטים באמצע האתר */
+        /* אפקט ריחוף זוהר גם לתמונה האמצעית (פיצ'ר 4) */
         .bio-image img {
             width: 100%;
             max-width: 380px;
@@ -249,6 +261,11 @@
             background-color: #faf2f5;
             margin: 0 auto;
             filter: contrast(1.08) brightness(1.02);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .bio-image img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 18px 40px rgba(184, 151, 40, 0.5), 0 8px 20px rgba(110, 62, 77, 0.25);
         }
 
         .faq-container {
@@ -310,7 +327,8 @@
             background: linear-gradient(135deg, var(--primary) 0%, #44242f 100%);
             color: var(--white);
             text-align: center;
-            padding: 80px 5%;
+            padding: 90px 5%;
+            position: relative;
         }
         .cta-section h2 {
             color: var(--white);
@@ -325,6 +343,44 @@
             background: linear-gradient(135deg, var(--secondary) 0%, #96771b 100%);
             color: var(--white);
             box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        /* מעברים מעוגלים ורכים בין המקטעים (פיצ'ר 2) */
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 45px;
+        }
+        .wave-divider .shape-fill {
+            fill: #FFFFFF;
+        }
+        .wave-divider-alt {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        .wave-divider-alt svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 45px;
+        }
+        .wave-divider-alt .shape-fill {
+            fill: var(--accent);
         }
 
         footer {
@@ -534,7 +590,7 @@
     <main>
         <section class="hero">
             <div class="container">
-                <!-- תמונת bar.jpg בלי כתיב בראש העמוד -->
+                <!-- תמונת bar.jpg עגולה ושלמה בראש העמוד -->
                 <div class="hero-face-container">
                     <img src="bar.jpg" alt="תמונת דיוקן של בר שירה דהן" class="hero-face-img">
                 </div>
@@ -551,17 +607,28 @@
                 
                 <p>את רק רוצה לראות אותה בטוב. בטוחה בעצמה, חופשייה, שמחה. ואת רוצה לדעת שאת עושה כל מה שאפשר כדי לעזור לה.</p>
             </div>
+            <!-- גל מעוגל רך למטה -->
+            <div class="wave-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
         </section>
 
-        <section class="section alt">
+        <section class="section alt" style="position: relative;">
             <div class="container">
                 <h2>אבל מה אם הדרך לעזור לה היא לא לנסות להעלים את החרדה, אלא להבין מה עומד מאחוריה?</h2>
                 <p>בעבודה איתי בקליניקה אנחנו מקשיבות למה שדפוס המצוקה הזה מספר לנו, ומנסות להגיע אל המקור הפנימי של המצוקה. אל המקומות הפצועים שעדיין מבקשים מענה וריפוי.</p>
                 <p>ואז כשהבת שלך מקבלת הזדמנות להבין מה קורה בתוכה ולרפא את מה שעומד בשורש הקושי, נפתחת אפשרות לשינוי עמוק יותר. לא רק בהתמודדות עם החרדה, ולא רק בהתנהגות, אלא גם בתחושה שלה כלפי עצמה וביכולת שלה לחיות את החיים שהיא רוצה, בדימוי העצמי ותחושת המסוגלות שלה.</p>
             </div>
+            <div class="wave-divider-alt">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
         </section>
 
-        <section class="section">
+        <section class="section" style="position: relative;">
             <div class="container bio-section">
                 <div class="bio-content">
                     <h2>נעים להכיר, אני בר שירה דהן</h2>
@@ -581,9 +648,14 @@
                     <img src="shira.jpg" alt="תמונת דיוקן של בר שירה דהן עם פרטים">
                 </div>
             </div>
+            <div class="wave-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
         </section>
 
-        <section class="section alt">
+        <section class="section alt" style="position: relative;">
             <div class="container">
                 <h2>במה אנחנו מתרכזות בתהליך?</h2>
                 <div class="cards-grid">
@@ -603,6 +675,11 @@
                         <p>כלים יומיומיים להתמודדות עם מצבי לחץ, חרדה, קשיים חברתיים והתלבטויות גיל ההתבגרות.</p>
                     </div>
                 </div>
+            </div>
+            <div class="wave-divider-alt">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
             </div>
         </section>
 
@@ -689,7 +766,7 @@
                     <br>• לחיצה על מקש ה-<strong>Enter</strong> מפעילה את הכפתור או הקישור שעליו נמצא הפוקוס כרגע.
                 </li>
                 <li><strong>טקסט חלופי ותיאורים (ALT):</strong> הקפדה על מתן טקסטים חלופיים תקינים לתמונות המופיעות באתר.</li>
-                <li>**ניגודיות צבעים תקינה:** הקפדה על יחסי ניגודיות תקניים בין צבעי הכתב לרקע לקריאות מירבית, בתוספת אפשרות לניגודיות גבוהה דרך תפריט הנגישות.</li>
+                <li><strong>ניגודיות צבעים תקינה:</strong> הקפדה על יחסי ניגודיות תקניים בין צבעי הכתב לרקע לקריאות מירבית, בתוספת אפשרות לניגודיות גבוהה דרך תפריט הנגישות.</li>
                 <li><strong>תפריט נגישות מתקדם:</strong> מאפשר הגדלה והקטנה מדורגת של גודל הטקסט, מעבר לניגודיות גבוהה וגווני אפור.</li>
             </ul>
             <p><strong>רכזת נגישות בעסק:</strong> בר שירה דהן<br>טלפון / וואטסאפ: 052-3916024</p>
