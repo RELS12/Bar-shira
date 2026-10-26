@@ -61,19 +61,21 @@
             align-items: center;
             gap: 20px;
         }
+        /* שימוש بلוגו הרשמי logo.jpg בתפריט העליון */
         .header-logo-img {
-            height: 130px; 
-            width: 130px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid var(--secondary);
+            height: 90px; 
+            width: auto;
+            max-width: 160px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid var(--secondary);
             background-color: var(--white);
-            box-shadow: 0 6px 20px rgba(184, 151, 40, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 4px;
+            box-shadow: 0 4px 15px rgba(184, 151, 40, 0.3);
+            transition: transform 0.3s ease;
         }
         .header-logo-img:hover {
-            transform: scale(1.08) rotate(3deg);
-            box-shadow: 0 10px 30px rgba(184, 151, 40, 0.7);
+            transform: scale(1.05);
         }
         .header-logo-text {
             font-size: 2.2rem; 
@@ -107,7 +109,7 @@
             margin-bottom: 30px;
         }
         
-        /* אפקט ריחוף זוהר ויוקרתי לתמונות */
+        /* אפקט ריחוף זוהר ויוקרתי לתמונת הפנים */
         .hero-face-img {
             height: 220px; 
             width: 220px;
@@ -581,17 +583,17 @@
             .hero h1 { font-size: 1.55rem; line-height: 1.4; }
             .section { padding: 50px 5%; }
             .hero-face-img { height: 160px; width: 160px; border-width: 5px; }
-            .header-logo-img { height: 90px; width: 90px; }
+            .header-logo-img { height: 70px; }
             .header-logo-text { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header דינמי ענק ובולט בגלילה -->
+    <!-- Header דינמי עם לוגו רשמי logo.jpg -->
     <header id="mainHeader">
         <div class="header-logo-container">
-            <img src="bar.jpg" alt="לוגו בר שירה דהן" class="header-logo-img">
+            <img src="logo.jpg" alt="לוגו בר שירה דהן" class="header-logo-img">
             <div class="header-logo-text">בר שירה דהן</div>
         </div>
         <a href="https://wa.me/972523916024" class="cta-header" target="_blank" aria-label="צור קשר"><i class="fab fa-whatsapp"></i> צור קשר</a>
