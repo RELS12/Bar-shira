@@ -35,70 +35,83 @@
             overflow-x: hidden;
         }
 
+        /* Header דינמי: בהתחלה שקוף ונחבא, ומופיע בעדינות בגלילה */
         header {
-            background: #faedf2;
+            background: rgba(250, 237, 242, 0.95);
+            backdrop-filter: blur(8px);
             box-shadow: 0 4px 20px rgba(110, 62, 77, 0.15);
             position: fixed;
-            top: 0;
+            top: -100px; /* מתחיל מוסתר למעלה */
             left: 0;
             width: 100%;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
+            padding: 12px 5%;
             border-bottom: 2px solid #e8c5d1;
-            gap: 15px;
+            transition: top 0.4s ease-in-out; /* אנימציית הופעה חלקה */
         }
-        .logo-container {
+        header.visible {
+            top: 0; /* יורד למקום כשגוללים */
+        }
+
+        .header-logo-container {
             display: flex;
             align-items: center;
-            gap: 18px;
-            flex: 1;
-            min-width: 0;
+            gap: 12px;
         }
-        .logo-img {
-            height: 120px;
-            width: 120px;
+        .header-logo-img {
+            height: 45px;
+            width: 45px;
             object-fit: cover;
             border-radius: 50%;
-            border: 5px solid var(--secondary);
-            box-shadow: 0 8px 25px rgba(184, 151, 40, 0.4), 0 4px 10px rgba(110, 62, 77, 0.15);
+            border: 2px solid var(--secondary);
             background-color: var(--white);
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
         }
-        .logo-img:hover {
-            transform: scale(1.05);
-        }
-        .logo-text {
-            font-size: 1.8rem;
+        .header-logo-text {
+            font-size: 1.2rem;
             font-weight: 800;
             color: var(--primary);
-            white-space: nowrap;
-            line-height: 1.2;
         }
+
         .cta-header {
             background-color: var(--primary);
             color: var(--white);
-            padding: 10px 22px;
+            padding: 8px 20px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: background 0.3s;
             box-shadow: 0 4px 12px rgba(110, 62, 77, 0.2);
-            white-space: nowrap;
-            flex-shrink: 0;
         }
         .cta-header:hover {
             background-color: #552f3b;
         }
         
+        /* Hero Section שמתחיל עם תמונת הפנים הגדולה והאישית בראש */
         .hero {
             background: linear-gradient(135deg, rgba(250, 237, 242, 0.95) 0%, rgba(184, 151, 40, 0.15) 100%);
-            padding: 180px 5% 80px 5%;
+            padding: 80px 5% 80px 5%;
             text-align: center;
+        }
+        .hero-face-container {
+            margin-bottom: 25px;
+        }
+        .hero-face-img {
+            height: 140px;
+            width: 140px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 50%;
+            border: 5px solid var(--secondary);
+            box-shadow: 0 10px 30px rgba(184, 151, 40, 0.4), 0 4px 15px rgba(110, 62, 77, 0.2);
+            background-color: var(--white);
+            transition: transform 0.3s ease;
+        }
+        .hero-face-img:hover {
+            transform: scale(1.05);
         }
         .hero h1 {
             font-size: 2.5rem;
@@ -497,19 +510,17 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.85rem; }
             .section { padding: 50px 5%; }
-            header { padding: 10px 3px; }
-            .logo-img { height: 68px; width: 68px; border-width: 2.5px; }
-            .logo-text { font-size: 1.05rem; }
-            .cta-header { padding: 8px 14px; font-size: 0.88rem; }
+            .hero-face-img { height: 110px; width: 110px; border-width: 3.5px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <img src="logo.jpg" alt="לוגו בר שירה דהן" class="logo-img">
-            <div class="logo-text">בר שירה דהן</div>
+    <!-- Header שמופיע רק בזמן גלילה -->
+    <header id="mainHeader">
+        <div class="header-logo-container">
+            <img src="logo.jpg" alt="לוגו בר שירה דהן" class="header-logo-img">
+            <div class="header-logo-text">בר שירה דהן</div>
         </div>
         <a href="https://wa.me/972523916024" class="cta-header" target="_blank" aria-label="צור קשר"><i class="fab fa-whatsapp"></i> צור קשר</a>
     </header>
@@ -517,6 +528,11 @@
     <main>
         <section class="hero">
             <div class="container">
+                <!-- תמונת הפנים האישית והחמימה בראש העמוד -->
+                <div class="hero-face-container">
+                    <img src="shira.jpg" alt="תמונת דיוקן של בר שירה דהן" class="hero-face-img">
+                </div>
+
                 <h1>מרגישה שעובר על הבת שלך משהו, ולא תמיד יודעת איך לעזור לה?</h1>
                 <p>את רואה אותה מתמודדת עם קשיים שמשפיעים על החיים שלה, ורוצה למצוא את הדרך הנכונה להיות שם בשבילה.</p>
                 <p>לפעמים זו חרדה, לפעמים קושי חברתי, התנהגות שמדאיגה אותך, התמכרות או מצוקה שהיא אפילו לא מצליחה לבטא במילים.</p>
@@ -686,6 +702,16 @@
     </div>
 
     <script>
+        // פונקציה להצגת הלוגו העליון רק כאשר גוללים למטה
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 150) {
+                header.classList.add('visible');
+            } else {
+                header.classList.remove('visible');
+            }
+        });
+
         function toggleAccessMenu() {
             const menu = document.getElementById('accessMenu');
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
