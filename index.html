@@ -107,7 +107,7 @@
             margin-bottom: 30px;
         }
         
-        /* אפקט ריחוף זוהר ויוקרתי (פיצ'ר 4) לתמונות */
+        /* אפקט ריחוף זוהר ויוקרתי לתמונות */
         .hero-face-img {
             height: 220px; 
             width: 220px;
@@ -249,7 +249,6 @@
             text-align: center;
         }
         
-        /* אפקט ריחוף זוהר גם לתמונה האמצעית (פיצ'ר 4) */
         .bio-image img {
             width: 100%;
             max-width: 380px;
@@ -345,7 +344,18 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.25);
         }
 
-        /* מעברים מעוגלים ורכים בין המקטעים (פיצ'ר 2) */
+        /* אנימציות כניסה רכות בגלילה (Fade-in on Scroll) */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* מעברים מעוגלים ורכים בין המקטעים */
         .wave-divider {
             position: absolute;
             bottom: 0;
@@ -589,7 +599,7 @@
 
     <main>
         <section class="hero">
-            <div class="container">
+            <div class="container fade-in">
                 <!-- תמונת bar.jpg עגולה ושלמה בראש העמוד -->
                 <div class="hero-face-container">
                     <img src="bar.jpg" alt="תמונת דיוקן של בר שירה דהן" class="hero-face-img">
@@ -616,7 +626,7 @@
         </section>
 
         <section class="section alt" style="position: relative;">
-            <div class="container">
+            <div class="container fade-in">
                 <h2>אבל מה אם הדרך לעזור לה היא לא לנסות להעלים את החרדה, אלא להבין מה עומד מאחוריה?</h2>
                 <p>בעבודה איתי בקליניקה אנחנו מקשיבות למה שדפוס המצוקה הזה מספר לנו, ומנסות להגיע אל המקור הפנימי של המצוקה. אל המקומות הפצועים שעדיין מבקשים מענה וריפוי.</p>
                 <p>ואז כשהבת שלך מקבלת הזדמנות להבין מה קורה בתוכה ולרפא את מה שעומד בשורש הקושי, נפתחת אפשרות לשינוי עמוק יותר. לא רק בהתמודדות עם החרדה, ולא רק בהתנהגות, אלא גם בתחושה שלה כלפי עצמה וביכולת שלה לחיות את החיים שהיא רוצה, בדימוי העצמי ותחושת המסוגלות שלה.</p>
@@ -629,7 +639,7 @@
         </section>
 
         <section class="section" style="position: relative;">
-            <div class="container bio-section">
+            <div class="container bio-section fade-in">
                 <div class="bio-content">
                     <h2>נעים להכיר, אני בר שירה דהן</h2>
                     <p><strong>מאמנת רגשית בשיטת המגדלור, אשת חינוך ומדריכת כלות.</strong></p>
@@ -656,7 +666,7 @@
         </section>
 
         <section class="section alt" style="position: relative;">
-            <div class="container">
+            <div class="container fade-in">
                 <h2>במה אנחנו מתרכזות בתהליך?</h2>
                 <div class="cards-grid">
                     <div class="card">
@@ -684,7 +694,7 @@
         </section>
 
         <section class="section">
-            <div class="container">
+            <div class="container fade-in">
                 <h2>שאלות נפוצות</h2>
                 <div class="faq-container">
                     <div class="faq-item">
@@ -714,7 +724,7 @@
         </section>
 
         <section class="cta-section">
-            <div class="container">
+            <div class="container fade-in">
                 <h2>מוכנה לעשות את הצעד הראשון עבור הבת שלך?</h2>
                 <p>דברי איתי ונתחיל מסע של הקשבה, חיבור וריפוי.</p>
                 <a href="https://wa.me/972523916024" class="btn-main" target="_blank" aria-label="לשיחת וואטסאפ אישית"><i class="fab fa-whatsapp"></i> לשיחת וואטסאפ אישית איתי</a>
@@ -794,6 +804,26 @@
             } else {
                 header.classList.remove('visible');
             }
+        });
+
+        // אנימציית הופעה רכה בגלילה (Fade-in)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(section => {
+            observer.observe(section);
         });
 
         function toggleAccessMenu() {
