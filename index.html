@@ -35,13 +35,13 @@
             overflow-x: hidden;
         }
 
-        /* Header דינמי ענק ובולט בגלילה – מסודר נכון מימין לשמאל */
+        /* Header דינמי ענק ובולט בגלילה */
         header {
             background: rgba(250, 237, 242, 0.98);
             backdrop-filter: blur(8px);
             box-shadow: 0 6px 25px rgba(110, 62, 77, 0.2);
             position: fixed;
-            top: -160px; /* מתחיל מוסתר למעלה */
+            top: -160px;
             left: 0;
             width: 100%;
             z-index: 1000;
@@ -91,7 +91,7 @@
             background-color: #552f3b;
         }
         
-        /* Hero Section שמתחיל עם תמונת הפנים המוגדלת והמרשימה בראש */
+        /* Hero Section עם תמונת bar.jpg בלי כתיב */
         .hero {
             background: linear-gradient(135deg, rgba(250, 237, 242, 0.95) 0%, rgba(184, 151, 40, 0.15) 100%);
             padding: 80px 5% 80px 5%;
@@ -115,13 +115,15 @@
             transform: scale(1.05);
         }
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             color: var(--primary);
             margin-bottom: 20px;
             font-weight: 800;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+            word-break: normal;
+            overflow-wrap: break-word;
         }
         .hero p {
             font-size: 1.15rem;
@@ -235,6 +237,7 @@
             text-align: center;
         }
         
+        /* תמונת shira.jpg עם הכתיב והפרטים באמצע האתר */
         .bio-image img {
             width: 100%;
             max-width: 380px;
@@ -509,20 +512,20 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.85rem; }
+            .hero h1 { font-size: 1.55rem; line-height: 1.4; }
             .section { padding: 50px 5%; }
             .hero-face-img { height: 160px; width: 160px; border-width: 5px; }
             .header-logo-img { height: 90px; width: 90px; }
-            .header-logo-text { font-size: 1.5rem; }
+            .header-logo-text { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header דינמי ענק ובולט בגלילה – מסודר נכון מימין לשמאל -->
+    <!-- Header דינמי ענק ובולט בגלילה -->
     <header id="mainHeader">
         <div class="header-logo-container">
-            <img src="logo.jpg" alt="לוגו בר שירה דהן" class="header-logo-img">
+            <img src="bar.jpg" alt="לוגו בר שירה דהן" class="header-logo-img">
             <div class="header-logo-text">בר שירה דהן</div>
         </div>
         <a href="https://wa.me/972523916024" class="cta-header" target="_blank" aria-label="צור קשר"><i class="fab fa-whatsapp"></i> צור קשר</a>
@@ -531,9 +534,9 @@
     <main>
         <section class="hero">
             <div class="container">
-                <!-- תמונת הפנים האישית והחמימה בראש העמוד (מוגדלת) -->
+                <!-- תמונת bar.jpg בלי כתיב בראש העמוד -->
                 <div class="hero-face-container">
-                    <img src="shira.jpg" alt="תמונת דיוקן של בר שירה דהן" class="hero-face-img">
+                    <img src="bar.jpg" alt="תמונת דיוקן של בר שירה דהן" class="hero-face-img">
                 </div>
 
                 <h1>מרגישה שעובר על הבת שלך משהו, ולא תמיד יודעת איך לעזור לה?</h1>
@@ -573,8 +576,9 @@
                     <p>ומתוך החיבור הזה, יחד עם הידע המקצועי והעבודה הרגשית, אפשר להתחיל להגיע לשורש הקושי, לאפשר ריפוי פנימי ולגלות מחדש את מי שהיא.</p>
                     <p style="margin-top: 20px; font-weight: 700; color: var(--primary);">בר שירה ❤️</p>
                 </div>
+                <!-- תמונת shira.jpg עם הכתיב והפרטים באמצע האתר -->
                 <div class="bio-image">
-                    <img src="shira.jpg" alt="תמונת דיוקן של בר שירה דהן">
+                    <img src="shira.jpg" alt="תמונת דיוקן של בר שירה דהן עם פרטים">
                 </div>
             </div>
         </section>
@@ -685,7 +689,7 @@
                     <br>• לחיצה על מקש ה-<strong>Enter</strong> מפעילה את הכפתור או הקישור שעליו נמצא הפוקוס כרגע.
                 </li>
                 <li><strong>טקסט חלופי ותיאורים (ALT):</strong> הקפדה על מתן טקסטים חלופיים תקינים לתמונות המופיעות באתר.</li>
-                <li><strong>ניגודיות צבעים תקינה:</strong> הקפדה על יחסי ניגודיות תקניים בין צבעי הכתב לרקע לקריאות מירבית, בתוספת אפשרות לניגודיות גבוהה דרך תפריט הנגישות.</li>
+                <li>**ניגודיות צבעים תקינה:** הקפדה על יחסי ניגודיות תקניים בין צבעי הכתב לרקע לקריאות מירבית, בתוספת אפשרות לניגודיות גבוהה דרך תפריט הנגישות.</li>
                 <li><strong>תפריט נגישות מתקדם:</strong> מאפשר הגדלה והקטנה מדורגת של גודל הטקסט, מעבר לניגודיות גבוהה וגווני אפור.</li>
             </ul>
             <p><strong>רכזת נגישות בעסק:</strong> בר שירה דהן<br>טלפון / וואטסאפ: 052-3916024</p>
@@ -705,7 +709,7 @@
     </div>
 
     <script>
-        // פונקציה להצגת הלוגו המוגדל בזמן גלילה
+        // פונקציה להצגת הלוגו והשם בגלילה
         window.addEventListener('scroll', function() {
             const header = document.getElementById('mainHeader');
             if (window.scrollY > 150) {
