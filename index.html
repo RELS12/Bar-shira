@@ -233,31 +233,44 @@
             margin: 0;
         }
 
-        /* עיצוב גלריית צילומי מסך המלצות (כל 5 התמונות) */
-        .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        /* עיצוב בועות וואטסאפ מעוצבות להמלצות */
+        .whatsapp-testimonials {
+            display: flex;
+            flex-direction: column;
             gap: 25px;
             margin-top: 40px;
+            margin-bottom: 40px;
         }
-        .screenshot-card {
-            background: var(--white);
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(110, 62, 77, 0.12);
-            border: 2px solid #e8c5d1;
-            text-align: center;
+        .wa-bubble {
+            background: #e7f5ec;
+            border: 1px solid #c8e6d0;
+            padding: 25px 30px;
+            border-radius: 20px 20px 4px 20px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.08);
+            position: relative;
+            max-width: 850px;
+            margin-right: auto;
             transition: transform 0.3s ease;
         }
-        .screenshot-card:hover {
-            transform: translateY(-5px);
+        .wa-bubble:hover {
+            transform: translateY(-3px);
         }
-        .screenshot-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            object-fit: contain;
-            max-height: 450px;
+        .wa-bubble p {
+            font-size: 1.1rem;
+            color: #2c2c2c;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+        .wa-author {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .wa-author i {
+            color: #25d366;
         }
 
         .bio-section {
@@ -687,242 +700,4 @@
             </div>
             <div class="wave-divider">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                </svg>
-            </div>
-        </section>
-
-        <section class="section alt" style="position: relative;">
-            <div class="container fade-in">
-                <h2>במה אנחנו מתרכזות בתהליך?</h2>
-                <div class="cards-grid">
-                    <div class="card">
-                        <i class="fas fa-seedling" aria-hidden="true"></i>
-                        <h3>חיזוק הדימוי העצמי</h3>
-                        <p>בניית ביטחון פנימי אמיתי, הכרת החוזקות של הנערה ויכולת עמידה איתנה מול אתגרי החיים.</p>
-                    </div>
-                    <div class="card">
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                        <h3>מרחב רגשי בטוח</h3>
-                        <p>מקום שבו מותר לעצור, לנשום, לפרוק את מה שמעיק בלי חשש משיפוטיות, ולמצוא שקט נפשי.</p>
-                    </div>
-                    <div class="card">
-                        <i class="fas fa-hands-helping" aria-hidden="true"></i>
-                        <h3>כלים מעשיים להתמודדות</h3>
-                        <p>כלים יומיומיים להתמודדות עם מצבי לחץ, חרדה, קשיים חברתיים והתלבטויות גיל ההתבגרות.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="wave-divider-alt">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                </svg>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container fade-in">
-                <h2>שאלות נפוצות</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <h4>איך יודעים שהגיע הזמן להתחיל תהליך אימון רגשי?</h4>
-                        <p>כאשר את רואה שהבת שלך מתמודדת לאורך זמן עם קושי רגשי, חברתי, סגירות פתאומית, תסכול עמוק או חרדה שמשפיעים על השמחה והתפקוד היומיומי שלה, זה הזמן לתת לה את המעטפת המקצועית שתעזור לה לצמוח.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4>האם יש שיתוף פעולה והדרכה להורים במהלך התהליך?</h4>
-                        <p>בהחלט. הקשר עם ההורים הוא עוגן חשוב ביותר. אנחנו מקיימות שיחות ועדכונים שוטפים כדי לוודא שאתם כהורים יודעים איך לחזק ולתמוך בה גם בבית.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4>כמה זמן נמשך כל מפגש ומה אורך התהליך?</h4>
-                        <p>אורך מפגש הוא כשעה, ותהליך אימון מותאם אישית לקצב של הנערה ולצרכים הייחודיים שלה.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- מקטע צילומי מסך מהמלצות הוואטסאפ (כל 5 התמונות rev1 עד rev5) -->
-        <section class="section alt" style="position: relative;">
-            <div class="container fade-in">
-                <h2>מילים מהלב של הורים</h2>
-                <p style="text-align: center; color: #555; margin-bottom: 20px;">הנה צילומי מסך של הודעות מרגשות שקיבלתי מהורים:</p>
-                
-                <div class="screenshots-grid">
-                    <div class="screenshot-card">
-                        <img src="rev1.jpeg" alt="המלצת הורים בוואטסאפ 1">
-                    </div>
-                    <div class="screenshot-card">
-                        <img src="rev2.jpeg" alt="המלצת הורים בוואטסאפ 2">
-                    </div>
-                    <div class="screenshot-card">
-                        <img src="rev3.jpeg" alt="המלצת הורים בוואטסאפ 3">
-                    </div>
-                    <div class="screenshot-card">
-                        <img src="rev4.jpeg" alt="המלצת הורים בוואטסאפ 4">
-                    </div>
-                    <div class="screenshot-card">
-                        <img src="rev5.jpeg" alt="המלצת הורים בוואטסאפ 5">
-                    </div>
-                </div>
-
-                <div class="contact-box">
-                    <h3>דברי איתי</h3>
-                    <p>לשיחה ישירה, התייעצות או קביעת פגישה, אפשר ליצור קשר בוואטסאפ או בטלפון:</p>
-                    <a href="https://wa.me/972523916024" class="btn-main" target="_blank" aria-label="שליחת הודעת וואטסאפ" style="margin-bottom: 20px;"><i class="fab fa-whatsapp"></i> שליחת הודעת וואטסאפ</a>
-                    <div>
-                        <span style="display: block; font-size: 1rem; color: #555; margin-bottom: 5px;">למי שאין וואטסאפ, ניתן להתקשר:</span>
-                        <div class="phone-display">052-3916024</div>
-                    </div>
-                </div>
-            </div>
-            <div class="wave-divider-alt">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                </svg>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container fade-in">
-                <h2>מוכנה לעשות את הצעד הראשון עבור הבת שלך?</h2>
-                <p>דברי איתי ונתחיל מסע של הקשבה, חיבור וריפוי.</p>
-                <a href="https://wa.me/972523916024" class="btn-main" target="_blank" aria-label="לשיחת וואטסאפ אישית"><i class="fab fa-whatsapp"></i> לשיחת וואטסאפ אישית איתי</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>כל הזכויות שמורות © בר שירה דהן | מאמנת רגשית למתבגרות</p>
-        <div class="footer-links">
-            <a role="button" tabindex="0" onclick="openModal('accessibilityModal')" onkeypress="if(event.key==='Enter') openModal('accessibilityModal')">הצהרת נגישות</a>
-            <span>•</span>
-            <a role="button" tabindex="0" onclick="openModal('privacyModal')" onkeypress="if(event.key==='Enter') openModal('privacyModal')">מדיניות פרטיות</a>
-        </div>
-    </footer>
-
-    <!-- כפתור נגישות צף -->
-    <div class="accessibility-btn" role="button" aria-label="פתח תפריט נגישות" tabindex="0" onclick="toggleAccessMenu()" onkeypress="if(event.key==='Enter') toggleAccessMenu()">
-        <i class="fas fa-universal-access" aria-hidden="true"></i>
-    </div>
-
-    <!-- תפריט הנגישות -->
-    <div class="accessibility-menu" id="accessMenu">
-        <h4>תפריט נגישות תקני (AA)</h4>
-        <button onclick="increaseText()">הגדל טקסט (+)</button>
-        <button onclick="decreaseText()">הקטן טקסט (-)</button>
-        <button onclick="toggleContrastAA()">ניגודיות גבוהה (AA)</button>
-        <button onclick="toggleGrayscale()">גווני אפור</button>
-        <button onclick="resetAccessibility()">איפוס הגדרות</button>
-    </div>
-
-    <a href="https://wa.me/972523916024" class="whatsapp-float" target="_blank" aria-label="צרו קשר בוואטסאפ">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    </a>
-
-    <!-- מודל הצהרת נגישות מלאה ותקנית -->
-    <div class="modal-overlay" id="accessibilityModal">
-        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="accTitle">
-            <button class="close-modal" onclick="closeModal('accessibilityModal')" aria-label="סגור חלון">&times;</button>
-            <h3 id="accTitle">הצהרת נגישות</h3>
-            <p><strong>הבהרה משפטית:</strong> לידיעת המשתמשות, העסק אינו מחויב חוקית בהנגשת אתרי אינטרנט לפי תקנות שוויון זכויות לאנשים עם מוגבלות (בשל היקפו/מחזור פעילותו), אך אנו בוחרים להנגיש את האתר מרצוננו החופשי ומתוך תפיסת עולם חברתית ואנושית המאמינה במתן שירות שוויוני ומכבד לכלל הלקוחות.</p>
-            <p>האתר הותאם והונגש בהתאם להנחיות תקן הישראלי (תקן 5568) לנגישות תכנים באינטרנט ברמת <strong>AA</strong>.</p>
-            <p><strong>התאמות הנגישות המיושמות באתר:</strong></p>
-            <ul>
-                <li><strong>התאמה לקוראי מסך:</strong> האתר כולל מבנה סמנטי תקין ותגיות עזר עבור עיוורים וכבדי ראייה המשתמשים בתוכנות הקראה.</li>
-                <li><strong>ניווט מקלדת מלא (איך משתמשים במקשים):</strong> האתר תומך בניווט מלא באמצעות המקלדת בלבד, ללא צורך בעכבר. 
-                    <br>• לחיצה על מקש ה-<strong>Tab</strong> במקלדת מעבירה את הפוקוס קדימה בין הקישורים, הכפתורים והאלמנטים האינטראקטיביים באתר.
-                    <br>• לחיצה על שילוב המקלדת <strong>Shift + Tab</strong> מעבירה את הפוקוס אחורה.
-                    <br>• לחיצה על מקש ה-<strong>Enter</strong> מפעילה את הכפתור או הקישור שעליו נמצא הפוקוס כרגע.
-                </li>
-                <li><strong>טקסט חלופי ותיאורים (ALT):</strong> הקפדה על מתן טקסטים חלופיים תקינים לתמונות המופיעות באתר.</li>
-                <li><strong>ניגודיות צבעים תקינה:</strong> הקפדה על יחסי ניגודיות תקניים בין צבעי הכתב לרקע לקריאות מירבית, בתוספת אפשרות לניגודיות גבוהה דרך תפריט הנגישות.</li>
-                <li><strong>תפריט נגישות מתקדם:</strong> מאפשר הגדלה והקטנה מדורגת של גודל הטקסט, מעבר לניגודיות גבוהה וגווני אפור.</li>
-            </ul>
-            <p><strong>רכזת נגישות בעסק:</strong> בר שירה דהן<br>טלפון / וואטסאפ: 052-3916024</p>
-        </div>
-    </div>
-
-    <!-- מודל מדיניות פרטיות -->
-    <div class="modal-overlay" id="privacyModal">
-        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="privTitle">
-            <button class="close-modal" onclick="closeModal('privacyModal')" aria-label="סגור חלון">&times;</button>
-            <h3 id="privTitle">מדיניות פרטיות</h3>
-            <p>בר שירה דהן – אימון רגשית למתבגרות מכבדת את פרטיותן של המשתמשות והמבקרות באתר, ומחויבת להגן עליה בהתאם לחוק הגנת הפרטיות.</p>
-            <p><strong>1. איסוף מידע:</strong> אנו אוספים מידע אישי שנמסר על ידי המשתמשת מרצון מלא (כגון שם ומספר טלפון) בעת פנייה יזומה דרך אפליקציית וואטסאפ או שיחת טלפון.</p>
-            <p><strong>2. שימוש במידע:</strong> המידע משמש אך ורק לצורך מענה לפניות, מתן שירותי האימון הרגשי ותיאום פגישות מול הלקוחות, ואינו מועבר לצד שלישי.</p>
-            <p><strong>3. זכות עיון:</strong> כל אדם זכאי לפנות ולבקש לעיין במידע שנשמר עליו או לבקש את מחיקתו דרך פנייה לטלפון: 052-3916024.</p>
-        </div>
-    </div>
-
-    <script>
-        // פונקציה להצגת הלוגו והשם בגלילה
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('mainHeader');
-            if (window.scrollY > 150) {
-                header.classList.add('visible');
-            } else {
-                header.classList.remove('visible');
-            }
-        });
-
-        // אנימציית הופעה רכה בגלילה (Fade-in)
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('appear');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(section => {
-            observer.observe(section);
-        });
-
-        function toggleAccessMenu() {
-            const menu = document.getElementById('accessMenu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function increaseText() {
-            document.body.style.fontSize = '1.15rem';
-        }
-
-        function decreaseText() {
-            document.body.style.fontSize = '0.95rem';
-        }
-
-        function toggleContrastAA() {
-            document.body.classList.toggle('contrast-aa');
-        }
-
-        function toggleGrayscale() {
-            document.body.classList.toggle('grayscale');
-        }
-
-        function resetAccessibility() {
-            document.body.style.fontSize = '';
-            document.body.classList.remove('contrast-aa', 'grayscale');
-        }
-
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.style.display = 'none';
-            }
-        }
-    </script>
-</body>
-</html>
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.3
