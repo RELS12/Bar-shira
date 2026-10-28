@@ -237,32 +237,28 @@
             margin: 0;
         }
 
-        /* עיצוב גלריית שורה אחת (Flexbox גלילה אופקית חלקה) */
+        /* גלריית שורה אחת עם גלילה נקייה (ללא פס גלילה מכוער) וחצים צפים */
+        .slider-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
         .screenshots-scroll-container {
             display: flex;
             gap: 25px;
             overflow-x: auto;
-            padding: 20px 10px 30px 10px;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: thin;
-            scrollbar-color: var(--secondary) #f1f1f1;
-            margin-top: 30px;
-            margin-bottom: 40px;
+            scroll-behavior: smooth;
+            padding: 10px 5px;
+            width: 100%;
+            scrollbar-width: none; /* הסתרת פס גלילה בפיירפוקס */
         }
         .screenshots-scroll-container::-webkit-scrollbar {
-            height: 10px;
-        }
-        .screenshots-scroll-container::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        .screenshots-scroll-container::-webkit-scrollbar-thumb {
-            background: var(--secondary);
-            border-radius: 10px;
+            display: none; /* הסתרת פס גלילה בכרום וספארי */
         }
         .screenshot-card {
             flex: 0 0 280px;
-            scroll-snap-align: center;
             background: var(--white);
             padding: 15px;
             border-radius: 15px;
@@ -280,6 +276,37 @@
             border-radius: 10px;
             object-fit: contain;
             max-height: 480px;
+        }
+
+        /* כפתורי חצים צפים לגלריה */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: var(--white);
+            border: 2px solid var(--secondary);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+        .slider-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .slider-btn.prev {
+            right: -22px;
+        }
+        .slider-btn.next {
+            left: -22px;
         }
 
         .bio-section {
@@ -632,6 +659,7 @@
             .hero-face-img { height: 160px; width: 160px; border-width: 5px; }
             .header-logo-img { height: 90px; width: 90px; }
             .header-logo-text { font-size: 1.4rem; }
+            .slider-btn { display: none; } /* במובייל גוללים עם האצבע בנוחות מלאה בלי חצים */
         }
     </style>
 </head>
@@ -762,27 +790,33 @@
             </div>
         </section>
 
-        <!-- מקטע מילים מהלב שלכם (שורה אחת עם כל 5 התמונות בגלילה אופקית) -->
+        <!-- מקטע מילים מהלב שלכם עם גלריית שקופיות נקייה וחצים צפים -->
         <section class="section alt" style="position: relative;">
             <div class="container-wide fade-in">
                 <h2>מילים מהלב שלכם</h2>
                 
-                <div class="screenshots-scroll-container">
-                    <div class="screenshot-card">
-                        <img src="rev1.jpeg" alt="המלצת הורים 1">
+                <div class="slider-wrapper">
+                    <button class="slider-btn prev" onclick="scrollSlider(1)" aria-label="הקודם"><i class="fas fa-chevron-right"></i></button>
+                    
+                    <div class="screenshots-scroll-container" id="reviewsSlider">
+                        <div class="screenshot-card">
+                            <img src="rev1.jpeg" alt="המלצת הורים 1">
+                        </div>
+                        <div class="screenshot-card">
+                            <img src="rev2.jpeg" alt="המלצת הורים 2">
+                        </div>
+                        <div class="screenshot-card">
+                            <img src="rev3.jpeg" alt="המלצת הורים 3">
+                        </div>
+                        <div class="screenshot-card">
+                            <img src="rev4.jpeg" alt="המלצת הורים 4">
+                        </div>
+                        <div class="screenshot-card">
+                            <img src="rev5.jpeg" alt="המלצת הורים 5">
+                        </div>
                     </div>
-                    <div class="screenshot-card">
-                        <img src="rev2.jpeg" alt="המלצת הורים 2">
-                    </div>
-                    <div class="screenshot-card">
-                        <img src="rev3.jpeg" alt="המלצת הורים 3">
-                    </div>
-                    <div class="screenshot-card">
-                        <img src="rev4.jpeg" alt="המלצת הורים 4">
-                    </div>
-                    <div class="screenshot-card">
-                        <img src="rev5.jpeg" alt="המלצת הורים 5">
-                    </div>
+
+                    <button class="slider-btn next" onclick="scrollSlider(-1)" aria-label="הבא"><i class="fas fa-chevron-left"></i></button>
                 </div>
 
                 <div class="contact-box" style="max-width: 900px; margin: 40px auto 0 auto;">
@@ -884,6 +918,12 @@
                 header.classList.remove('visible');
             }
         });
+
+        // פונקציה לגלילה חלקה באמצעות החצים
+        function scrollSlider(direction) {
+            const container = document.getElementById('reviewsSlider');
+            container.scrollBy({ left: direction * 310, behavior: 'smooth' });
+        }
 
         // אנימציית הופעה רכה בגלילה (Fade-in)
         const observerOptions = {
