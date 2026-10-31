@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>בר שירה דהן - מאמנת רגשית למתבגרות</title>
+    <!-- הוספת סמל האתר (Favicon) -->
+    <link rel="icon" href="logo.png" type="image/png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -237,7 +240,7 @@
             margin: 0;
         }
 
-        /* גלריית שורה אחת עם גלילה נקייה (ללא פס גלילה מכוער) וחצים צפים */
+        /* גלריית שורה אחת עם גלילה נקייה וחצים צפים */
         .slider-wrapper {
             position: relative;
             display: flex;
@@ -252,10 +255,10 @@
             scroll-behavior: smooth;
             padding: 10px 5px;
             width: 100%;
-            scrollbar-width: none; /* הסתרת פס גלילה בפיירפוקס */
+            scrollbar-width: none;
         }
         .screenshots-scroll-container::-webkit-scrollbar {
-            display: none; /* הסתרת פס גלילה בכרום וספארי */
+            display: none;
         }
         .screenshot-card {
             flex: 0 0 280px;
@@ -278,7 +281,6 @@
             max-height: 480px;
         }
 
-        /* כפתורי חצים צפים לגלריה */
         .slider-btn {
             position: absolute;
             top: 50%;
@@ -420,7 +422,6 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.25);
         }
 
-        /* אנימציות כניסה רכות בגלילה */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -431,7 +432,6 @@
             transform: translateY(0);
         }
 
-        /* מעברים מעוגלים ורכים בין המקטעים */
         .wave-divider {
             position: absolute;
             bottom: 0;
@@ -659,13 +659,12 @@
             .hero-face-img { height: 160px; width: 160px; border-width: 5px; }
             .header-logo-img { height: 90px; width: 90px; }
             .header-logo-text { font-size: 1.4rem; }
-            .slider-btn { display: none; } /* במובייל גוללים עם האצבע בנוחות מלאה בלי חצים */
+            .slider-btn { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header דינמי עם לוגו עגול, גדול ובולט logo.jpg -->
     <header id="mainHeader">
         <div class="header-logo-container">
             <img src="logo.jpg" alt="לוגו בר שירה דהן" class="header-logo-img">
@@ -677,7 +676,6 @@
     <main>
         <section class="hero">
             <div class="container fade-in">
-                <!-- תמונת bar.jpg עגולה ושלמה בראש העמוד -->
                 <div class="hero-face-container">
                     <img src="bar.jpg" alt="תמונת דיוקן של בר שירה דהן" class="hero-face-img">
                 </div>
@@ -694,7 +692,6 @@
                 
                 <p>את רק רוצה לראות אותה בטוב. בטוחה בעצמה, חופשייה, שמחה. ואת רוצה לדעת שאת עושה כל מה שאפשר כדי לעזור לה.</p>
             </div>
-            <!-- גל מעוגל רך למטה -->
             <div class="wave-divider">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
@@ -730,7 +727,6 @@
                     <p>ומתוך החיבור הזה, יחד עם הידע המקצועי והעבודה הרגשית, אפשר להתחיל להגיע לשורש הקושי, לאפשר ריפוי פנימי ולגלות מחדש את מי שהיא.</p>
                     <p style="margin-top: 20px; font-weight: 700; color: var(--primary);">בר שירה ❤️</p>
                 </div>
-                <!-- תמונת shira.jpg עם הכתיב והפרטים באמצע האתר -->
                 <div class="bio-image">
                     <img src="shira.jpg" alt="תמונת דיוקן של בר שירה דהן עם פרטים">
                 </div>
@@ -790,7 +786,6 @@
             </div>
         </section>
 
-        <!-- מקטע מילים מהלב שלכם עם גלריית שקופיות נקייה וחצים צפים -->
         <section class="section alt" style="position: relative;">
             <div class="container-wide fade-in">
                 <h2>מילים מהלב שלכן</h2>
@@ -854,12 +849,10 @@
         </div>
     </footer>
 
-    <!-- כפתור נגישות צף -->
     <div class="accessibility-btn" role="button" aria-label="פתח תפריט נגישות" tabindex="0" onclick="toggleAccessMenu()" onkeypress="if(event.key==='Enter') toggleAccessMenu()">
         <i class="fas fa-universal-access" aria-hidden="true"></i>
     </div>
 
-    <!-- תפריט הנגישות -->
     <div class="accessibility-menu" id="accessMenu">
         <h4>תפריט נגישות תקני (AA)</h4>
         <button onclick="increaseText()">הגדל טקסט (+)</button>
@@ -873,7 +866,6 @@
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
-    <!-- מודל הצהרת נגישות מלאה ותקנית -->
     <div class="modal-overlay" id="accessibilityModal">
         <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="accTitle">
             <button class="close-modal" onclick="closeModal('accessibilityModal')" aria-label="סגור חלון">&times;</button>
@@ -896,7 +888,6 @@
         </div>
     </div>
 
-    <!-- מודל מדיניות פרטיות -->
     <div class="modal-overlay" id="privacyModal">
         <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="privTitle">
             <button class="close-modal" onclick="closeModal('privacyModal')" aria-label="סגור חלון">&times;</button>
@@ -909,7 +900,6 @@
     </div>
 
     <script>
-        // פונקציה להצגת הלוגו והשם בגלילה
         window.addEventListener('scroll', function() {
             const header = document.getElementById('mainHeader');
             if (window.scrollY > 150) {
@@ -919,13 +909,11 @@
             }
         });
 
-        // פונקציה לגלילה חלקה באמצעות החצים
         function scrollSlider(direction) {
             const container = document.getElementById('reviewsSlider');
             container.scrollBy({ left: direction * 310, behavior: 'smooth' });
         }
 
-        // אנימציית הופעה רכה בגלילה (Fade-in)
         const observerOptions = {
             root: null,
             rootMargin: '0px',
