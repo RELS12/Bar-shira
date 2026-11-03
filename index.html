@@ -39,7 +39,6 @@
             line-height: 1.8;
             overflow-x: hidden;
             font-size: 1rem;
-            transition: font-size 0.2s ease;
         }
 
         /* Header דינמי ענק ובולט בגלילה */
@@ -512,7 +511,7 @@
             justify-content: center;
             font-size: 26px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
+            z-index: 2000;
             cursor: pointer;
             border: 2px solid var(--secondary);
             transition: transform 0.3s;
@@ -529,7 +528,7 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            z-index: 1000;
+            z-index: 2000;
             width: 280px;
             display: none;
             border: 2px solid var(--secondary);
@@ -591,7 +590,7 @@
             display: none;
             align-items: center;
             justify-content: center;
-            z-index: 2000;
+            z-index: 3000;
             padding: 20px;
         }
         .modal-content {
@@ -649,7 +648,7 @@
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            z-index: 100;
+            z-index: 1000;
             animation: pulseWhatsApp 2s infinite ease-in-out;
             transition: transform 0.3s;
         }
@@ -939,23 +938,27 @@
 
         function toggleAccessMenu() {
             const menu = document.getElementById('accessMenu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
         }
 
-        // משתנה לשמירת רמת ההגדלה הנוכחית
-        let currentFontSize = 1;
+        // ניהול הגדלת והקטנת טקסט יחסית
+        let currentScale = 1;
 
         function increaseText() {
-            if (currentFontSize < 1.4) {
-                currentFontSize += 0.1;
-                document.body.style.fontSize = currentFontSize + 'rem';
+            if (currentScale < 1.35) {
+                currentScale += 0.1;
+                document.body.style.fontSize = currentScale + 'rem';
             }
         }
 
         function decreaseText() {
-            if (currentFontSize > 0.85) {
-                currentFontSize -= 0.1;
-                document.body.style.fontSize = currentFontSize + 'rem';
+            if (currentScale > 0.85) {
+                currentScale -= 0.1;
+                document.body.style.fontSize = currentScale + 'rem';
             }
         }
 
@@ -968,7 +971,7 @@
         }
 
         function resetAccessibility() {
-            currentFontSize = 1;
+            currentScale = 1;
             document.body.style.fontSize = '1rem';
             document.body.classList.remove('contrast-aa', 'grayscale');
         }
