@@ -38,6 +38,8 @@
             color: var(--text-color);
             line-height: 1.8;
             overflow-x: hidden;
+            font-size: 1rem;
+            transition: font-size 0.2s ease;
         }
 
         /* Header דינמי ענק ובולט בגלילה */
@@ -747,12 +749,12 @@
                     <div class="card">
                         <i class="fas fa-seedling" aria-hidden="true"></i>
                         <h3>להגיע לשורש הקושי</h3>
-                        <p>להבין מה עומד מאחורי הרגשות וההתנהגויות ולזהות את מה שמוהע מהנערה להתקדם.</p>
+                        <p>להבין מה עומד מאחורי הרגשות וההתנהגויות ולזהות את מה שמונע מהנערה להתקדם.</p>
                     </div>
                     <div class="card">
                         <i class="fas fa-heart" aria-hidden="true"></i>
                         <h3>מרחב רגשי בטוח</h3>
-                        <p>מקום שבו אפשר להיפתח, לגעת גם במקומת הכואבים ולהרגיש שרואים אותה באמת, בלי משיפוטיות.</p>
+                        <p>מקום שבו אפשר להיפתח, לגעת גם במקומות הכואבים ולהרגיש שרואים אותה באמת, בלי שיפוטיות.</p>
                     </div>
                     <div class="card">
                         <i class="fas fa-hands-helping" aria-hidden="true"></i>
@@ -940,12 +942,21 @@
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
 
+        // משתנה לשמירת רמת ההגדלה הנוכחית
+        let currentFontSize = 1;
+
         function increaseText() {
-            document.body.style.fontSize = '1.15rem';
+            if (currentFontSize < 1.4) {
+                currentFontSize += 0.1;
+                document.body.style.fontSize = currentFontSize + 'rem';
+            }
         }
 
         function decreaseText() {
-            document.body.style.fontSize = '0.95rem';
+            if (currentFontSize > 0.85) {
+                currentFontSize -= 0.1;
+                document.body.style.fontSize = currentFontSize + 'rem';
+            }
         }
 
         function toggleContrastAA() {
@@ -957,7 +968,8 @@
         }
 
         function resetAccessibility() {
-            document.body.style.fontSize = '';
+            currentFontSize = 1;
+            document.body.style.fontSize = '1rem';
             document.body.classList.remove('contrast-aa', 'grayscale');
         }
 
