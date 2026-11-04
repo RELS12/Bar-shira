@@ -39,6 +39,15 @@
             line-height: 1.8;
             overflow-x: hidden;
             font-size: 1rem;
+            transition: font-size 0.3s ease;
+        }
+
+        /* מצבי נגישות להגדלה והקטנה יציבה */
+        body.text-large {
+            font-size: 1.15rem !important;
+        }
+        body.text-small {
+            font-size: 0.9rem !important;
         }
 
         /* Header דינמי ענק ובולט בגלילה */
@@ -497,6 +506,7 @@
             color: #ffffff;
         }
 
+        /* כפתור נגישות בצד ימין למטה */
         .accessibility-btn {
             position: fixed;
             bottom: 30px;
@@ -635,6 +645,7 @@
             100% { transform: scale(1); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
         }
 
+        /* כפתור וואטסאפ צף בצד שמאל למטה */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -945,20 +956,15 @@
             }
         }
 
-        let currentScale = 1;
-
+        // ניהול הגדלת והקטנת טקסט בטוח ויציב
         function increaseText() {
-            if (currentScale < 1.35) {
-                currentScale += 0.1;
-                document.body.style.fontSize = currentScale + 'rem';
-            }
+            document.body.classList.remove('text-small');
+            document.body.classList.toggle('text-large');
         }
 
         function decreaseText() {
-            if (currentScale > 0.85) {
-                currentScale -= 0.1;
-                document.body.style.fontSize = currentScale + 'rem';
-            }
+            document.body.classList.remove('text-large');
+            document.body.classList.toggle('text-small');
         }
 
         function toggleContrastAA() {
@@ -970,9 +976,7 @@
         }
 
         function resetAccessibility() {
-            currentScale = 1;
-            document.body.style.fontSize = '1rem';
-            document.body.classList.remove('contrast-aa', 'grayscale');
+            document.body.classList.remove('text-large', 'text-small', 'contrast-aa', 'grayscale');
         }
 
         function openModal(modalId) {
