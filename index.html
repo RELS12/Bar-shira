@@ -20,7 +20,7 @@
             --dark: #1f212d;
             --text-color: #222222; 
             --white: #FFFFFF;
-            --zoom-level: 1; /* משתנה דינמי להגדלה/הקטנה של כל האתר */
+            --zoom-level: 1; /* משתנה דינמי להגדלה/הקטנה של טקסטים */
         }
         * {
             box-sizing: border-box;
@@ -43,29 +43,16 @@
             transition: font-size 0.2s ease;
         }
 
-        /* החלת רמת ההגדלה/הקטנה על כל רכיבי האתר, הכרטיסיות והתמונות יחד */
-        .page-wrapper * {
-            font-size: calc(1em * var(--zoom-level));
+        /* החלת רמת ההגדלה/הקטנה על טקסטים ואלמנטים מבלי לפגוע בלוגו ובצורות העגולות */
+        .page-wrapper p, .page-wrapper span, .page-wrapper a, .page-wrapper li, .page-wrapper label {
+            font-size: calc(1rem * var(--zoom-level));
         }
 
-        /* התאמה דינמית לכותרות ולכרטיסיות בהתאם לזום */
         h1 { font-size: calc(2.4rem * var(--zoom-level)) !important; }
         h2 { font-size: calc(2rem * var(--zoom-level)) !important; }
         h3 { font-size: calc(1.3rem * var(--zoom-level)) !important; }
-        
-        .hero-face-img {
-            height: calc(220px * var(--zoom-level)) !important;
-            width: calc(220px * var(--zoom-level)) !important;
-        }
-        .header-logo-img {
-            height: calc(120px * var(--zoom-level)) !important;
-            width: calc(120px * var(--zoom-level)) !important;
-        }
-        .bio-image img {
-            max-width: calc(380px * var(--zoom-level)) !important;
-        }
 
-        /* מעטפת ראשית לתוכן האתר כדי שגווני האפור לא ישפיעו על הכפתורים הצפים */
+        /* מעטפת ראשית לתוכן האתר */
         .page-wrapper {
             width: 100%;
             min-height: 100vh;
@@ -97,6 +84,26 @@
             align-items: center;
             gap: 20px;
         }
+        
+        /* שמירה על לוגו עגול ויפה בלי שום עיוות */
+        .header-logo-img {
+            height: 120px; 
+            width: 120px;
+            min-width: 120px;
+            min-height: 120px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50% !important;
+            border: 4px solid var(--secondary);
+            background-color: var(--white);
+            box-shadow: 0 6px 20px rgba(184, 151, 40, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .header-logo-img:hover {
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 10px 30px rgba(184, 151, 40, 0.7);
+        }
+
         .header-logo-text {
             font-size: calc(2.2rem * var(--zoom-level)); 
             font-weight: 800;
@@ -128,10 +135,15 @@
             margin-bottom: 30px;
         }
         
+        /* תמונת הפרופיל העגולה של בר */
         .hero-face-img {
+            height: 220px; 
+            width: 220px;
+            min-width: 220px;
+            min-height: 220px;
             object-fit: cover;
             object-position: center top;
-            border-radius: 50%;
+            border-radius: 50% !important;
             border: 6px solid var(--secondary);
             box-shadow: 0 12px 35px rgba(184, 151, 40, 0.5), 0 6px 20px rgba(110, 62, 77, 0.25);
             background-color: var(--white);
@@ -334,6 +346,8 @@
         }
         
         .bio-image img {
+            width: 100%;
+            max-width: 380px;
             height: auto;
             object-fit: contain;
             border-radius: 20px;
@@ -684,7 +698,7 @@
                         <p>ואת מנסה לעזור. מדברת איתה, מעודדת, מחפשת פתרונות. לפעמים את חסרת אונים, לפעמים מתוסכלת, ובעיקר חושבת "מה אני עושה לא בסדר".</p>
                     </div>
                     
-                    <p>את רק רוצה לראות אותה בטוב. בטוחה בעצמה, חופשייה, שמחה. ואת רוצה לדעת שאת עושה כל מה שאפשר כדי לעזור לה.</p>
+                    <p>את רק רוצה לראות אותה בטוחה בעצמה, חופשייה, שמחה. ואת רוצה לדעת שאת עושה כל מה שאפשר כדי לעזור לה.</p>
                 </div>
                 <div class="wave-divider">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -851,8 +865,8 @@
 
     <div class="accessibility-menu" id="accessMenu">
         <h4>תפריט נגישות תקני (AA)</h4>
-        <button onclick="increaseText()">הגדל טקסט ותמונות (+)</button>
-        <button onclick="decreaseText()">הקטן טקסט ותמונות (-)</button>
+        <button onclick="increaseText()">הגדל טקסט (+)</button>
+        <button onclick="decreaseText()">הקטן טקסט (-)</button>
         <button onclick="toggleContrastAA()">ניגודיות גבוהה (AA)</button>
         <button onclick="toggleGrayscale()">גווני אפור</button>
         <button onclick="resetAccessibility()">איפוס הגדרות</button>
@@ -873,7 +887,7 @@
                 <li><strong>התאמה לקוראי מסך:</strong> האתר כולל מבנה סמנטי תקין ותגיות עזר עבור עיוורים וכבדי ראייה המשתמשים בתוכנות הקראה.</li>
                 <li><strong>ניווט מקלדת מלא:</strong> האתר תומך בניווט מלא באמצעות המקלדת בלבד (מקש Tab ו־Enter).</li>
                 <li><strong>טקסט חלופי ותיאורים (ALT):</strong> הקפדה על מתן טקסטים חלופיים תקינים לתמונות המופיעות באתר.</li>
-                <li><strong>ניגודיות צבעים ושינוי גודל:</strong> אפשרות להגדלה והקטנה גלובלית של כל תוכן האתר והתמונות, לצד מעבר לניגודיות גבוהה וגווני אפור.</li>
+                <li><strong>ניגודיות צבעים ושינוי גודל:</strong> אפשרות להגדלה והקטנה גלובלית של כל טקסט ותוכן האתר, לצד מעבר לניגודיות גבוהה וגווני אפור.</li>
             </ul>
             <p><strong>רכזת נגישות בעסק:</strong> בר שירה דהן<br>טלפון / וואטסאפ: 052-3916024</p>
         </div>
@@ -937,15 +951,15 @@
         let currentZoom = 1;
 
         function increaseText() {
-            if (currentZoom < 1.5) { // מאפשר להגדיל עד 150%
-                currentZoom += 0.12;
+            if (currentZoom < 1.4) {
+                currentZoom += 0.1;
                 document.documentElement.style.setProperty('--zoom-level', currentZoom);
             }
         }
 
         function decreaseText() {
-            if (currentZoom > 0.8) { // מאפשר להקטין עד 80%
-                currentZoom -= 0.12;
+            if (currentZoom > 0.85) {
+                currentZoom -= 0.1;
                 document.documentElement.style.setProperty('--zoom-level', currentZoom);
             }
         }
